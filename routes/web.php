@@ -6,6 +6,8 @@ use App\Http\Controllers\SubscribeController;
 use App\Http\Controllers\AdminHomeController;
 use App\Http\Controllers\AdminAboutController;
 use App\Http\Controllers\AdminEventController;
+use App\Http\Controllers\AdminBlogController;
+use App\Http\Controllers\AdminGalleryController;
 use App\Http\Controllers\WhatsAppController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,10 +27,15 @@ Route::get('/', function () {
 });
 Route::get('/about', [GeneralController::class, 'about'])->name('about');
 Route::get('/events', [GeneralController::class, 'events'])->name('events');
+Route::get('/blog', [GeneralController::class, 'blog'])->name('blog');
+Route::get('/gallery', [GeneralController::class, 'gallery'])->name('gallery');
+Route::get('/clients', [GeneralController::class, 'clients'])->name('clients');
+Route::get('/membership', [GeneralController::class, 'membership'])->name('membership');
 Route::get('/speakers', [GeneralController::class, 'speakers'])->name('speakers');
 Route::get('/contact', [GeneralController::class, 'contact'])->name('contact');
 Route::get('/confirmAttending', [GeneralController::class, 'confirmAttend'])->name('confirmAttending');
 Route::get('/schedule/{schedule}',  [GeneralController::class, 'viewSchedule'])->name('schedule.view');
+Route::get('/blogdetails/{blogdetails}',  [GeneralController::class, 'viewBlogdetails'])->name('blogdetails.view');
 Route::post('/generate-code', [ProfileController::class, 'generateCode'])->name('generate.code');
 
 
@@ -109,6 +116,16 @@ Route::middleware('admin')->group(function () {
     Route::patch('/events/{id}', [AdminEventController::class, 'updateEvent'])->name('events.update');
     Route::patch('/eventsmain/{id}', [AdminEventController::class, 'updateEventMain'])->name('eventsmain.update');
     Route::delete('/eventDelete/{id}', [AdminEventController::class, 'destroyEvent'])->name('eventDelete.destroy');
+    
+    Route::get('/adminBlog', [AdminBlogController::class, 'index'])->name('admin.blog');
+    Route::post('/blog', [AdminBlogController::class, 'storeBlog'])->name('blog.store');
+    Route::patch('/blog/{id}', [AdminBlogController::class, 'updateBlog'])->name('blog.update');
+    Route::delete('/blogDelete/{id}', [AdminBlogController::class, 'destroyBlog'])->name('blogDelete.destroy');
+
+    Route::get('/adminGallery', [AdminGalleryController::class, 'index'])->name('admin.gallery');
+    Route::post('/gallery', [AdminGalleryController::class, 'storeGallery'])->name('gallery.store');
+    Route::patch('/gallery/{id}', [AdminGalleryController::class, 'updateGallery'])->name('gallery.update');
+    Route::delete('/galleryDelete/{id}', [AdminGalleryController::class, 'destroyGallery'])->name('galleryDelete.destroy');
 
     Route::get('/event/{id}',  [AdminEventController::class, 'speakers'])->name('event.speakers');
     

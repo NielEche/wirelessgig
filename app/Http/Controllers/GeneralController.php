@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Events;
+use App\Models\Blogs;
 use App\Models\Speakers;
 use App\Models\Schedules;
 
@@ -21,7 +22,28 @@ class GeneralController extends Controller
     {
         return view('pages.events');
     }
+
+    public function blog()
+    {
+        return view('pages.blog');
+    }
+
+
+    public function gallery()
+    {
+        return view('pages.gallery');
+    }
    
+
+    public function clients()
+    {
+        return view('pages.clients');
+    }
+
+    public function membership()
+    {
+        return view('pages.membership');
+    }   
 
     public function schedule()
     {
@@ -58,6 +80,19 @@ class GeneralController extends Controller
         $Schedules = Schedules::where('event_id', $id)->get();
     
         return view('pages.schedule', compact( 'Events', 'Speakers', 'Schedules'));
+    }
+
+
+    public function viewBlogdetails($id)
+    {
+        $blog = Blogs::find($id);
+    
+        if (!$blog) {
+            return redirect()->route('pages.blog')->with('error', 'Blog not found');
+        }
+
+    
+        return view('pages.blogdetails', compact( 'blog'));
     }
 
 

@@ -8,7 +8,7 @@
 
 
 
-    <div class="py-12" style="background-color:#1d70b7;">
+    <div class="py-12" style="background-color:#000`;">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 py-20">
             <div  class="bg-white dark:bg-gray-800 rounded-full shadow-sm sm:rounded-full">
             @include('layouts.navigation')
@@ -35,19 +35,19 @@
 
             <div class="container  mx-auto my-4 lg:flex justify-between ">
                     <div class="text-black py-4" style="min-width: 50vw;">
-                        <h2 class="MenloRegular text-4xl">Welcome To Your <span class="text-emerald-500">Dashboard</span><span class="blink" style="color:rgb(16 185 129 / var(--tw-bg-opacity));">|</span></h2>
+                        <h2 class="MenloRegular text-4xl">Welcome To Your Dashboard</h2>
                     </div>
 
                  
                     <div class="text-black py-4">
                         <p class="MenloRegular text-sm text-left">Manage your account and events here, update your availabilty and keep track of all your sessions.</p class="MenloRegular">
-                        <h2 class="MenloRegular text-xl py-4">Attendance passcode <span class="text-emerald-500">{{ auth()->user()->attending }} </span></h2>
+                        
                     </div>      
             </div>
         </div>
 
      
-        <div class="bg-white mx-auto px-6 lg:px-20 py-6">
+       <!-- <div class="bg-white mx-auto px-6 lg:px-20 py-6">
           <div class="container mx-auto my-4 ">
                 <div class=" float-left py-6 my-4 bg-white">
                     <a href="{{route('user.id')}}" class="bg-emerald-500 px-4 py-2 rounded">Generate ID CARD !</a>
@@ -59,7 +59,7 @@
 
         <hr>
         
-        <!--<div class=" bg-white mx-auto px-6 lg:px-20 pt-6 pb-2">
+        <div class=" bg-white mx-auto px-6 lg:px-20 pt-6 pb-2">
             <div class="container mx-auto my-4 lg:flex justify-between ">
                     <div class="text-black py-4" style="min-width: 50vw;">
                         <h2 class="MenloRegular font-bold text-2xl">Registered Sessions</h2>

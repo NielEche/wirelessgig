@@ -4,12 +4,9 @@
                 src="https://res.cloudinary.com/dx7x2tazo/image/upload/v1713590106/logophtech_faclfs_1_sn2ceq.png" alt=""></a>
     </div>
 
-    <div class="text-black py-4" style="min-width: 50vw;">
-        <h2 class="MenloRegular text-4xl">REGISTRATION <span class="text-red-500">CLOSED</span><span class="blink" style="color:rgb(16 185 129 / var(--tw-bg-opacity));">|</span></h2>
-     </div>
 
 
-    <form id="registrationForm" class="MenloRegular hidden" method="POST" action="{{ route('register') }}">
+    <form id="registrationForm" class="MenloRegular " method="POST" action="{{ route('register') }}">
         @csrf
 
         <div id="section1">

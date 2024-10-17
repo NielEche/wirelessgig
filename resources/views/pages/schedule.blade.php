@@ -1,26 +1,29 @@
 <x-app-layout>
     <x-slot name="header">
         <div>
-            <h2 class="font-semibold text-xl bg-emerald-500 dark:text-green-600 leading-tight MenloRegular ">
-                PH TECH EXPO
+            <h2 class="font-semibold text-xl bg-black dark:text-green-600 leading-tight MenloRegular ">
+                WIRELESS GIG
             </h2>
         </div>
     </x-slot>
 
-        <div class="container bg-emerald-500 mx-auto px-6 lg:px-20 pt-16">
+        <div class="container bg-black mx-auto px-6 lg:px-20 pt-16">
             <div class="py-12" style="font-family:Menlo;">
-            <h2 class="MenloRegular text-4xl py-6">About This <span class="text-white">Event</span><span class="blink"
-                        style="color:white;">|</span></h2>
-            <p class="MenloRegular text-base text-white text-left">
-                {{ $Events->about }}
+                <h2 class="Oswald text-white text-3xl py-4"> {{ $Events->theme }}</h2>
+                <div class="flex justify-left">
+                    <img class="w-full object-cover h-[36rem] py-10" src="{{ $Events->path }}" alt="">
+                </div>
+          
+                <p class="Montserrat text-base text-white text-left pb-6">
+                    {{ $Events->about }}
                 </p>
-              
+
+                    <hr>
             </div>
-            <hr>
         </div>
 
 
-    <div class="container bg-emerald-500 mx-auto px-6 lg:px-20 pb-10">
+    <div class="container bg-black mx-auto px-6 lg:px-20 pb-10">
         <div class="py-10">
 
 
@@ -44,7 +47,7 @@
                         style="color:white;">|</span></h2>
                 </div>
             @endif
-            <hr>
+           
 
             @php
                 $previousDate = null;
@@ -191,7 +194,7 @@
 
 
     @if($showSpeakers)
-        <div class="container bg-emerald-500 mx-auto px-6 lg:px-20 py-0" id="speakers">
+        <div class="container bg-black mx-auto px-6 lg:px-20 py-0" id="speakers">
             <div class="py-2">
                 <div class="text-black pb-6" style="min-width: 50vw;">
                     <h2 style="font-family:Menlo;" class="MenloRegular text-4xl">Our <span class="text-white">Speakers</span><span class="blink"
@@ -202,7 +205,7 @@
         </div>
     @endif
 
-        <div class="container bg-white mx-auto px-6 lg:px-20 py-10 card-container lg:grid grid-cols-4 gap-1" >
+        <div class="container bg-black mx-auto px-6 lg:px-20 py-10 card-container lg:grid grid-cols-4 gap-1" >
         @foreach($Speakers as $speaker)
         @if($speaker->publish == 1)
             <div class="rounded-lg mb-6">

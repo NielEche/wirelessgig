@@ -1,7 +1,7 @@
 <x-admin-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight NHaasGroteskDSPro-65Md">
-            Admin Partner
+            Admin Clients
         </h2>
     </x-slot>
 
@@ -26,13 +26,13 @@
     <div class="container-fluid mx-auto pt-6  bg-SelectColor">
         <div class="text-left text-black bg-SelectColor lg:px-24 p-0 relative z-10">
             <h3 class="text-3xl leading-none pb-8 font-semibold orpheusproMedium">
-                Partners</h3>
+                Clients</h3>
         </div>
         <hr class="  border-black dark:border-black">
         <div class="flex items-center px-6 py-6">
             <button x-data="" x-on:click.prevent="$dispatch('open-modal', 'addPartner')" id="add-slider-button"
                 class="ml-auto text-xl py-4 underline DINAlternateBold  p-6  text-black">
-                Add partner
+                Add client
             </button>
         </div>
         <div class=" flex flex-wrap">
@@ -41,7 +41,7 @@
                     <div class="w-full relative gallerSec">
                         
                         <img alt="partner image" class="block h-56 w-full object-cover object-center"
-                            src="public{{ $partner->path }}" />
+                            src="{{ $partner->path }}" />
                         <div class="absolute inset-0 flex justify-center items-center text-white opacity-0 hover:opacity-100 transition-opacity duration-300"
                             style="font-weight:800; background-color: rgba(0, 0, 0, 0.8);">
                             <button x-data="" x-on:click.prevent="$dispatch('open-modal', '{{ $partner->id }}')"
@@ -152,7 +152,7 @@
 
 
             <h2 class="text-lg NHaasGroteskDSPro-65Md text-black dark:text-black">
-                {{ __('Add a new Partner ') }}
+                {{ __('Add a new client ') }}
             </h2>
 
 
@@ -173,9 +173,7 @@
                 <x-input-label for="role" :value="__('Partner type')" />
                 <x-input-error :messages="$errors->get('type')" class="mt-2" />
                 <select class="block mt-1 w-full rounded-lg text-white bg-black border-black focus:border-black focus:ring-black" id="type" name="type" required autofocus>
-                    <option value="Sponsors">Sponsors</option>
-                    <option value="Partners">Partners</option>
-                    <option value="Supporters">Supporters</option>
+                    <option value="Client">Client</option>
                 </select>
             </div>
 

@@ -121,10 +121,7 @@
 
     <div class="container-fluid mx-auto pt-16  bg-SelectColor">
         <hr class="  border-black dark:border-black">
-        <div class="text-left text-black bg-SelectColor lg:px-24 p-0 relative z-10">
-            <h3 class="text-3xl leading-none py-8 font-semibold orpheusproMedium">
-            Events</h3>
-        </div>
+      
         <hr class="  border-black dark:border-black">
         <div class="flex items-center px-6 py-6">
             <button x-data="" x-on:click.prevent="$dispatch('open-modal', 'addEvent')" id="add-slider-button"
@@ -132,6 +129,7 @@
                 Create Event
             </button>
         </div>
+        
         <div class=" flex flex-wrap">
             @foreach($events as $event)
               
@@ -139,7 +137,7 @@
                 <div class="flex-initial w-80 pt-4 px-2">
                     <div class="relative space-y-1 pt-4 border-b  border-black dark:border-black">
                         <div class=" text-center">
-                            <img src="public{{ $event->path }}" alt="Image"
+                            <img src="{{ $event->path }}" alt="Image"
                                 class="object-contain storiesBox" />
                             <p class="text-base pt-3 HaasGroteskDSPro-65Md" style="font-weight:800;">
                                 {{ $event->date }} </p>
@@ -152,12 +150,12 @@
                                 <a x-data="" x-on:click.prevent="$dispatch('open-modal', 'delete{{ $event->id }}')"
                                     class="text-sm DINAlternateBold">Delete</a>
                             </div>
-                            <div class="flex justify-between border-t  border-black dark:border-black py-4">
+                            <!--<div class="flex justify-between border-t  border-black dark:border-black py-4">
                                <a href="{{ route('event.speakers', $event->id) }}"
                                     class="text-sm DINAlternateBold">Add Speakers</a>
                                 <a href="{{ route('event.schedule', $event->id) }}"
                                     class="text-sm DINAlternateBold">Add Schedule</a>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -195,7 +193,7 @@
                             <x-input-error class="mt-2" :messages="$errors->get('date')" />
                         </div>
 
-                        <div class="mt-6 ">
+                        <div class="mt-6 hidden">
                             <p class="orpheusproMedium" for="time" :value="__('Time')">Time</p>
                             <x-text-input id="time" name="time" type="text" class="mt-1 block w-full"
                                 :value="old('time', $event->time)" required autofocus autocomplete="time" />
@@ -210,9 +208,9 @@
                         </div>
 
                         <div class="mt-6 ">
-                            <p class="orpheusproMedium" for="venue" :value="__('venue')">Venue</p>
+                            <p class="orpheusproMedium" for="venue" :value="__('venue')">Location</p>
                             <x-text-input id="venue" name="venue" type="text" class="mt-1 block w-full"
-                                :value="old('venue', $event->venue)" required autofocus autocomplete="venue" />
+                                :value="old('venue', $event->venue)" required autofocus autocomplete="location" />
                             <x-input-error class="mt-2" :messages="$errors->get('venue')" />
                         </div>
 
@@ -279,71 +277,71 @@
 
        <!-- MODALS MODALS MODALS MODALS -->
        <x-modal name="addEvent" focusable>
-        <!-- Modal Content -->
-        <form method="post" action="{{ route('events.store') }}" class="p-6 bg-emerald-500"
-            enctype="multipart/form-data">
-            @csrf
+            <!-- Modal Content -->
+            <form method="post" action="{{ route('events.store') }}" class="p-6 bg-emerald-500"
+                enctype="multipart/form-data">
+                @csrf
 
 
-            <h2 class="text-lg NHaasGroteskDSPro-65Md text-black dark:text-black">
-                {{ __('Add a new Slider ') }}
-            </h2>
+                <h2 class="text-lg NHaasGroteskDSPro-65Md text-black dark:text-black">
+                    {{ __('Add a new Slider ') }}
+                </h2>
 
 
-            <div class="mt-6">
-                <p class="orpheusproMedium" for="path" :value="__('path')">File*</p>
-                <input type="file" name="path" id="path" class="mt-1 block w-full" required />
-                <x-input-error class="mt-2" :messages="$errors->get('path')" />
-            </div>
+                <div class="mt-6">
+                    <p class="orpheusproMedium" for="path" :value="__('path')">File*</p>
+                    <input type="file" name="path" id="path" class="mt-1 block w-full" required />
+                    <x-input-error class="mt-2" :messages="$errors->get('path')" />
+                </div>
 
-            <div class="mt-6 ">
-                <p class="orpheusproMedium" for="date" :value="__('date')">Date</p>
-                <x-text-input id="date" name="date" type="text" class="mt-1 block w-full"  autofocus
-                    autocomplete="date" />
-                <x-input-error class="mt-2" :messages="$errors->get('date')" />
-            </div>
+                <div class="mt-6 ">
+                    <p class="orpheusproMedium" for="date" :value="__('date')">Date</p>
+                    <x-text-input id="date" name="date" type="text" class="mt-1 block w-full"  autofocus
+                        autocomplete="date" />
+                    <x-input-error class="mt-2" :messages="$errors->get('date')" />
+                </div>
 
-            <div class="mt-6 ">
-                <p class="orpheusproMedium" for="time" :value="__('time')">Time</p>
-                <x-text-input id="time" name="time" type="text" class="mt-1 block w-full"  autofocus
-                    autocomplete="time" />
-                <x-input-error class="mt-2" :messages="$errors->get('time')" />
-            </div>
+                <div class="mt-6 hidden">
+                    <p class="orpheusproMedium" for="time" :value="__('time')">Time</p>
+                    <x-text-input id="time" name="time" type="text" class="mt-1 block w-full"  autofocus
+                        autocomplete="time" />
+                    <x-input-error class="mt-2" :messages="$errors->get('time')" />
+                </div>
 
-            <div class="mt-6 ">
-                <p class="orpheusproMedium" for="theme" :value="__('theme')">Theme</p>
-                <x-text-input id="theme" name="theme" type="text" class="mt-1 block w-full"  autofocus
-                    autocomplete="theme" />
-                <x-input-error class="mt-2" :messages="$errors->get('theme')" />
-            </div>
-            <div class="mt-6 ">
-                <p class="orpheusproMedium" for="venue" :value="__('venue')">Venue</p>
-                <x-text-input id="venue" name="venue" type="text" class="mt-1 block w-full"  autofocus
-                    autocomplete="venue" />
-                <x-input-error class="mt-2" :messages="$errors->get('venue')" />
-            </div>
-            <div class="mt-6 ">
-                <p class="orpheusproMedium" for="about" :value="__('about')">About</p>
-                <textarea id="about" name="about"
-                    class="HalyardDisplay border-b-2 border-black dark:border-black my-3 focus:border-white dark:focus:border-white focus:ring-white dark:focus:ring-white rounded-md shadow-sm mt-1 block w-full h-40 resize-y"
-                    required autofocus autocomplete="about" value="null"></textarea>
-                <x-input-error class="mt-2" :messages="$errors->get('about')" />
-            </div>
-
-
+                <div class="mt-6 ">
+                    <p class="orpheusproMedium" for="theme" :value="__('theme')">Theme</p>
+                    <x-text-input id="theme" name="theme" type="text" class="mt-1 block w-full"  autofocus
+                        autocomplete="theme" />
+                    <x-input-error class="mt-2" :messages="$errors->get('theme')" />
+                </div>
+                <div class="mt-6 ">
+                    <p class="orpheusproMedium" for="venue" :value="__('venue')">Location</p>
+                    <x-text-input id="venue" name="venue" type="text" class="mt-1 block w-full"  autofocus
+                        autocomplete="venue" />
+                    <x-input-error class="mt-2" :messages="$errors->get('venue')" />
+                </div>
+                <div class="mt-6 ">
+                    <p class="orpheusproMedium" for="about" :value="__('about')">About</p>
+                    <textarea id="about" name="about"
+                        class="HalyardDisplay border-b-2 border-black dark:border-black my-3 focus:border-white dark:focus:border-white focus:ring-white dark:focus:ring-white rounded-md shadow-sm mt-1 block w-full h-40 resize-y"
+                        required autofocus autocomplete="about" value="null"></textarea>
+                    <x-input-error class="mt-2" :messages="$errors->get('about')" />
+                </div>
 
 
-            <div class="mt-6 flex justify-end">
-                <x-secondary-button x-on:click="$dispatch('close')">
-                    {{ __('Cancel') }}
-                </x-secondary-button>
 
-                <x-primary-button class="ml-3">
-                    {{ __('Save') }}
-                </x-primary-button>
-            </div>
-        </form>
 
-    </x-modal>
+                <div class="mt-6 flex justify-end">
+                    <x-secondary-button x-on:click="$dispatch('close')">
+                        {{ __('Cancel') }}
+                    </x-secondary-button>
+
+                    <x-primary-button class="ml-3">
+                        {{ __('Save') }}
+                    </x-primary-button>
+                </div>
+            </form>
+
+        </x-modal>
 
 </x-admin-layout>

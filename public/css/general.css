@@ -1,20 +1,33 @@
 @font-face {
-    font-family: 'Menlo Regular';
+    font-family: 'Oswald';
     font-style: normal;
     font-weight: normal;
-    src: url('/fonts/Menlo-Regular.woff') format('woff');
+    src: url('/fonts/Oswald-Bold.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'AzeretMono';
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: normal;
-    src: url('/fonts/AzeretMono.ttf') format('truetype');
+    src: url('/fonts/Montserrat-Regular.woff') format('woff');
 }
 
-.MenloRegular{
-    font-family: 'AzeretMono', sans-serif !important;
+
+
+input {
+    background-color: black !important;
 }
+
+.Oswald{
+    font-family: 'Oswald', sans-serif !important;
+}
+
+
+
+.Montserrat{
+    font-family: 'Montserrat', sans-serif !important;
+}
+
 
 .fixed-bottom {
     position: fixed;
@@ -56,3 +69,168 @@
     flex: 1;
 }
 
+
+.processSize{
+    width:100%;
+    height:500px;
+    object-fit:cover;
+}
+
+.caption {
+    position: relative;
+    bottom: 30%;
+    left: 0; 
+    text-align:left;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    width:50%;
+    padding: 10px 30px;
+}
+
+.headCap     {
+    position: relative;
+    bottom: 35%;
+    left: 0; 
+    text-align:left;
+    color: white;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.carousel-inner, .carousel-inner2 {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+    width: 100%;
+    height:600px;
+}
+
+.carousel-item2 {
+    height:100vh !important;
+    flex: 0 0 100%;
+    width: 100%;
+    height:800px;
+}
+
+ .carousel-item2 img {
+    height:100vh !important;
+    width:100%;
+    object-fit: cover;
+}
+
+.carousel-item img {
+    height:600px;
+    width:100%;
+    object-fit: cover;
+}
+.prev-btn, .next-btn , .prev-btn2, .next-btn2 {
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+    background-color:rgb(16 185 129 / var(--tw-bg-opacity)) ;
+}
+
+.prev-btn, .prev-btn2{
+    left: 0;
+}
+
+.programsw:hover .bg-prog {
+    opacity: 1; /* Adjust the opacity value as needed */
+    transform: translate(0, -1%); /* Slide up the container */
+}
+
+@media (max-width: 620px) {
+
+    .caption {
+        width:100%;
+        bottom: 35%;
+    }
+
+    .headCap    {
+        width:100%;
+        bottom: 60%;
+    }
+
+    .programsw .bg-prog {
+       visibility:hidden;
+    }
+
+
+}
+
+.next-btn, .next-btn2 {
+    right: 0;
+}
+
+.counter {
+    display:flex;
+    justify-content:space-between;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom:20px;
+}
+
+.counter-number {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 50%;
+    line-height: 20px;
+    text-align: center;
+    padding: 10px;
+    color:black;
+}
+
+.counter-number.active {
+    background-color:rgb(16 185 129 / var(--tw-bg-opacity)) ;
+    color: #000
+}
+
+.sticky-parent{
+height: 700vh;
+}
+
+.sticky{
+position: sticky;
+top: 0px;
+max-height: 100vh;
+overflow-x: hidden;
+overflow-y: hidden;
+}
+.dim{
+display: block;
+min-width: 70vw;
+height: 100vh;
+}
+.horizontal{
+display: flex;
+}
+.br{
+outline: solid;
+}
+
+@media (max-width: 620px) {
+.dim{
+    display: block;
+    min-width: 100vw;
+    height: 100vh;
+}
+}
+
+p{
+font-size: 12px;
+text-align: center;
+}

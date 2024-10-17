@@ -13,7 +13,7 @@ class SubscribeController extends Controller
         subscribers::create([
             'name' => $request->input('name'),
             'email' => $request->input('email'),
-            'phone' => $request->input('phone'),
+            'phone' => 'phone',
             'comment' => $request->input('comment'),
         ]);
 

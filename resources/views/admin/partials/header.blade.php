@@ -17,7 +17,7 @@
                     <!-- Logo -->
                     <div class="shrink-0 flex items-center">
                         <a class="md:font-bold text-3xl" href="{{ route('admin.dashboard') }}">
-                           <img src="https://res.cloudinary.com/dx7x2tazo/image/upload/v1713590106/logophtech_faclfs_1_sn2ceq.png" class="w-10" alt="PHTECHEXPO LOGO">
+                           <img src="https://res.cloudinary.com/nieleche/image/upload/v1724783944/logo_2_u8romc.png" class="w-10" alt="WIRELESS GIG LOGO">
                         </a>
                     </div>
 
@@ -80,7 +80,7 @@
        
          <li class="py-4">
             <a class="text-center flex justify-center" href="">
-                <img src="https://res.cloudinary.com/dx7x2tazo/image/upload/v1713590106/logophtech_faclfs_1_sn2ceq.png" class="w-12" alt="PHTECHEXPO LOGO">
+                <img src="https://res.cloudinary.com/nieleche/image/upload/v1724783944/logo_2_u8romc.png" class="w-12" alt="WIRELESS GIG LOGO">
             </a>
          </li>
          <li class="py-6 text-center">
@@ -104,8 +104,18 @@
             </x-nav-link>
          </li>
          <li class="py-6 text-center">
+            <x-nav-link style="color:white;" href="{{ route('admin.blog') }}" :active="request()->routeIs('features')">
+                Blog
+            </x-nav-link>
+         </li>
+         <li class="py-6 text-center">
+            <x-nav-link style="color:white;" href="{{ route('admin.gallery') }}" :active="request()->routeIs('features')">
+                Gallery
+            </x-nav-link>
+         </li>
+         <li class="py-6 text-center">
             <x-nav-link style="color:white;" href="{{ route('admin.partner') }}" :active="request()->routeIs('issues')">
-            Partners
+            Clients
             </x-nav-link>
          </li>
       </ul>

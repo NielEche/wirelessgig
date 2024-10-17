@@ -10,9 +10,9 @@
                     <div class="shrink-0 flex items-center">
                         <a class="md:font-bold text-xl my-4"  href="/">
                             @if (Route::currentRouteName() === 'home')
-                            <img class="my-10 hidden" src="https://res.cloudinary.com/dx7x2tazo/image/upload/v1713590106/logophtech_faclfs_1_sn2ceq.png" alt="PH TECH SUMMIT LOGO W" style="width:50px !important;">
+                            <img class="my-10 hidden" src="https://res.cloudinary.com/nieleche/image/upload/v1724783944/logo_2_u8romc.png" alt="wireless gig" style="width:80px !important;">
                             @else
-                                <img src="https://res.cloudinary.com/dx7x2tazo/image/upload/v1713590106/logophtech_faclfs_1_sn2ceq.png" alt="PH TECH SUMMIT LOGO" style="width:50px !important;">
+                                <img src="https://res.cloudinary.com/nieleche/image/upload/v1724783944/logo_2_u8romc.png" alt="wireless gig" style="width:80px !important;">
                             @endif
                         </a>
                     </div>
@@ -23,58 +23,46 @@
                         }
                     </style>
                     <!-- Navigation Links -->
-                    <div class="flex hidden space-x-8 px-6 sm:flex bg-white rounded-full ">
+                    <div class="flex hidden space-x-8 px-6 sm:flex text-white ">
 
-                        <div class="hidden space-x-4 px-0 sm:flex">
+                        <div class="hidden space-x-4 px-0 sm:flex text-white">
                             <x-nav-link  href="{{ route('about') }}" class="{{ Route::currentRouteName() === 'home' ? 'hover-border ' : '' }}"  :active="request()->routeIs('about')">
                                 About
                             </x-nav-link>
                         </div>
-                      
-                        <div class="hidden space-x-4 px-0 sm:flex relative">
-      
-                                <x-dropdown  class="p-0" align="center">
-                                    <x-slot name="trigger">
-                                        <button class="inline-flex items-center py-2 mt-1">
-                                            <x-nav-link class="{{ Route::currentRouteName() === 'home' ? 'hover-border ' : '' }}" :active="request()->routeIs('events')">
-                                                Events
-                                            </x-nav-link>
 
-                                            <div class="ms-1">
-                                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                                </svg>
-                                            </div>
-                                        </button>
-                                    </x-slot>
-
-                                    <x-slot name="content" >
-                                        <div class="bg-white text-green-800">
-                                        <x-dropdown-link  style="color:rgb(16 185 129 / var(--tw-text-opacity));" href="{{ route('events') }}">
-                                          Events
-                                        </x-dropdown-link>
-                                        <x-dropdown-link style="color:rgb(16 185 129 / var(--tw-text-opacity));" href="{{ route('schedule.view', ['schedule' => $events2]) }}#speakers">
-                                          Speakers
-                                        </x-dropdown-link>
-
-                                       
-                                        <x-dropdown-link style="color:rgb(16 185 129 / var(--tw-text-opacity));" href="{{ route('schedule.view', ['schedule' => $events2]) }}#schedule">
-                                           Sessions
-                                        </x-dropdown-link>
-                                        </div>
-                                    </x-slot>
-                                </x-dropdown>
+                        <div class="hidden space-x-4 px-0 sm:flex text-white">
+                            <x-nav-link  href="{{ route('events') }}" class="{{ Route::currentRouteName() === 'home' ? 'hover-border ' : '' }}"  :active="request()->routeIs('events')">
+                                Events
+                            </x-nav-link>
+                        </div>
                     
+
+                        <div class="hidden space-x-6 px-0 sm:flex">
+                            <x-nav-link href="{{ route('clients') }}" class="{{ Route::currentRouteName() === 'home' ? 'hover-border ' : '' }}"  :active="request()->routeIs('clients')">
+                                Clients
+                            </x-nav-link>
+                        </div>
+                        <div class="hidden space-x-6 px-0 sm:flex">
+                            <x-nav-link href="{{ route('membership') }}" class="{{ Route::currentRouteName() === 'home' ? 'hover-border ' : '' }}"  :active="request()->routeIs('membership')">
+                                Membership
+                            </x-nav-link>
                         </div>
 
                         <div class="hidden space-x-6 px-0 sm:flex">
-                            <x-nav-link href="/#partners" class="{{ Route::currentRouteName() === 'home' ? 'hover-border ' : '' }}"  :active="request()->routeIs('shop')">
-                                Partners
+                            <x-nav-link href="{{ route('blog') }}" class="{{ Route::currentRouteName() === 'home' ? 'hover-border ' : '' }}"  :active="request()->routeIs('blog')">
+                                Blog
+                            </x-nav-link>
+                        </div>
+
+                        <div class="hidden space-x-6 px-0 sm:flex">
+                            <x-nav-link href="{{ route('gallery') }}" class="{{ Route::currentRouteName() === 'home' ? 'hover-border ' : '' }}"  :active="request()->routeIs('gallery')">
+                                Gallery
                             </x-nav-link>
                         </div>
                    
 
-                        <div class="hidden space-x-6 px-0 sm:flex" >
+                        <!--<div class="hidden space-x-6 px-0 sm:flex" >
                             @auth
                                 <x-nav-link href="{{ route('dashboard') }}" class="{{ Route::currentRouteName() === 'home' ? 'hover-border ' : '' }}"   :active="request()->routeIs('dashboard')">
                                     Profile
@@ -84,11 +72,11 @@
                                     Attend
                                 </x-nav-link>
                             @endauth
-                        </div>
+                        </div>-->
 
                         <div class="hidden space-x-6 px-0 sm:flex">
-                            <x-nav-link href="{{ route('contact') }}" class="{{ Route::currentRouteName() === 'home' ? 'hover-border ' : '' }}"   :active="request()->routeIs('contact')">
-                                Contact
+                            <x-nav-link href="/" class="{{ Route::currentRouteName() === 'home' ? 'hover-border ' : '' }}"   :active="request()->routeIs('contact')">
+                                Shop
                             </x-nav-link>
                         </div>
                 
@@ -97,9 +85,7 @@
                 <!-- Hamburger -->
                 
                 <div class="flex items-center bg-white rounded-full px-4 sm:hidden">
-                   <span class="text-black text-xs MenloRegular">
-                        MENU
-                   </span> 
+                
                         @if (Route::currentRouteName() === 'home')
                             <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-black  hover:text-white dark:hover:text-black hover:bg-white-100 dark:hover:bg-white-900 focus:outline-none focus:bg-white-100 dark:focus:bg-white-900 focus:text-white-500 dark:focus:text-white-400 transition duration-150 ease-in-out">
                                 <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
@@ -127,36 +113,44 @@
                     About
                 </a>
             </div>
+           
+
             <div class="py-6 space-y-4">
-                <a href="{{ route('events') }}" class="text-2xl font-bold MenloRegular">
+                <a href="{{ route('events') }}"  class="text-2xl font-bold MenloRegular">
                     Events
                 </a>
-                    <ul>
-                        <li class="py-2">
-                            <a class="text-sm font-bold MenloRegular" href="{{ route('schedule.view', ['schedule' => $events2]) }}#speakers">
-                                Speakers
-                            </a>
-                        </li>
-                        <li class="py-2">
-                            <a class="text-sm font-bold MenloRegular" href="{{ route('schedule.view', ['schedule' => $events2]) }}#schedule">
-                                Sessions
-                            </a>
-                        </li>         
-                    </ul>
-                
             </div>
-            
+                   
             <div class="py-6 space-y-4">
-                <a href="/#partners"  class="text-2xl font-bold MenloRegular">
-                    Partners
+                <a href="{{ route('clients') }}"  class="text-2xl font-bold MenloRegular">
+                    Clients
+                </a>
+            </div>
+
+            <div class="py-6 space-y-4">
+                <a href="{{ route('membership') }}"  class="text-2xl font-bold MenloRegular">
+                    Membership
+                </a>
+            </div>
+
+            <div class="py-6 space-y-4">
+                <a href="{{ route('blog') }}"  class="text-2xl font-bold MenloRegular">
+                    Blog
+                </a>
+            </div>
+
+            <div class="py-6 space-y-4">
+                <a href="/"  class="text-2xl font-bold MenloRegular">
+                    Gallery
                 </a>
             </div>
              <div class="py-6 space-y-4">
-                <a href="{{ route('contact') }}"  class="text-2xl font-bold MenloRegular">
-                    Contact
+                <a href="/"  class="text-2xl font-bold MenloRegular">
+                    Shop
                 </a>
             </div>
-            <div class="py-6 space-y-4">
+
+            <!--<div class="py-6 space-y-4">
                 @auth
                     <a href="{{ route('dashboard') }}" class="text-2xl font-bold MenloRegular">
                         hello {{ auth()->user()->name }} !
@@ -166,7 +160,7 @@
                         Attend
                     </a>
                 @endauth
-            </div>
+            </div>-->
            
         </div>
     </nav>

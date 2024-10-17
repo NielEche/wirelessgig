@@ -26,7 +26,7 @@ class AdminEventController extends Controller
     {
         $image_url = $request->file('path');
     
-        // Handle image upload to Cloudinary if a new image is provided
+      // Handle image upload 
         if ($request->hasFile('path') && $request->file('path')->isValid()) {
             $file = $request->file('path');
             // Define the storage path
@@ -44,7 +44,7 @@ class AdminEventController extends Controller
         Events::create([
             'path' => $image_url,
             'date' => $request->input('date'),
-            'time' => $request->input('time'),
+            'time' => 'time',
             'venue' => $request->input('venue'),
             'theme' => $request->input('theme'),
             'about' => $request->input('about'),
@@ -97,7 +97,7 @@ class AdminEventController extends Controller
         // Initialize the $image_url variable
         $image_url = $events->path; // Use the existing image URL by default
     
-        // Handle image upload to Cloudinary if a new image is provided
+        // Handle image upload 
         if ($request->hasFile('path') && $request->file('path')->isValid()) {
             $file = $request->file('path');
             // Define the storage path
@@ -115,7 +115,7 @@ class AdminEventController extends Controller
         $events->update([
             'path' => $image_url,
             'date' => $request->input('date'),
-            'time' => $request->input('time'),
+            'time' => 'time',
             'venue' => $request->input('venue'),
             'theme' => $request->input('theme'),
             'about' => $request->input('about'),
@@ -135,13 +135,15 @@ class AdminEventController extends Controller
         // Initialize the $image_url variable
         $image_url = $EventsMains->path; // Use the existing image URL by default
     
-        // Handle image upload to Cloudinary if a new image is provided
-        if ($request->hasFile('path') && $request->file('path')->isValid()) {
-            $path = $request->file('path')->getRealPath();
-            $uploadResult = cloudinary()->upload($path);
-    
-            if ($uploadResult) {
-                $image_url = $uploadResult->getSecurePath();
+         // Handle image upload 
+         if ($request->hasFile('path') && $request->file('path')->isValid()) {
+            $file = $request->file('path');
+            // Define the storage path
+            $path = $file->store('uploads', 'public');
+            
+            if ($path) {
+                // Get the URL to the file
+                $image_url = Storage::url($path);
             }
         }
     

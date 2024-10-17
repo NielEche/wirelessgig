@@ -43,7 +43,7 @@
                             class="absolute galleryOverlay inset-0 bg-black opacity-40 transition-opacity duration-300">
                         </div> <!-- Black overlay -->
                         <img alt="gallery image" class="block h-80 w-full object-cover object-center"
-                            src="public{{ $gallery->path }}" />
+                            src="{{ $gallery->path }}" />
                         <div class="absolute inset-0 flex justify-center items-center text-white opacity-0 hover:opacity-100 transition-opacity duration-300"
                             style="font-weight:800; background-color: rgba(0, 0, 0, 0.8);">
                             <button x-data="" x-on:click.prevent="$dispatch('open-modal', 'Slider{{ $gallery->id }}')"
@@ -158,7 +158,7 @@
         <div class="text-left text-black bg-SelectColor lg:px-24 p-0 relative z-10">
             <h3 class="text-3xl leading-none pb-8 font-semibold orpheusproMedium">
                 Homepage About</h3>
-            <p class="text-lg leading-none pb-2 font-semibold text-black">Let's Talk About The Future</p>
+        
         </div>
         <hr class="  border-black dark:border-black">
      

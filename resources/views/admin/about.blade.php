@@ -21,7 +21,7 @@
     @endif
 
 
-    <div class="container-fluid mx-auto pt-6  bg-SelectColor">
+    <!--<div class="container-fluid mx-auto pt-6  bg-SelectColor">
         <div class="text-left text-black bg-SelectColor lg:px-24 p-0 relative z-10">
             <h3 class="text-3xl leading-none pb-8 font-semibold orpheusproMedium">
                 About Header</h3>
@@ -39,7 +39,7 @@
                     <div class="w-full relative gallerSec">
                         <div
                             class="absolute galleryOverlay inset-0 bg-black opacity-40 transition-opacity duration-300">
-                        </div> <!-- Black overlay -->
+                        </div> 
                         <img alt="gallery image" class="block h-80 w-full object-cover object-center"
                             src="public{{ $gallery->path }}" />
                         <div class="absolute inset-0 flex justify-center items-center text-white opacity-0 hover:opacity-100 transition-opacity duration-300"
@@ -53,7 +53,7 @@
                     </div>
                 </div>
                 <x-modal name="G{{ $gallery->id }}" focusable>
-                    <!-- Modal Content -->
+                   
                     <form method="post"
                         action="{{ route('about_gallerys.update', $gallery->id) }}"
                         class="p-6 bg-emerald-500" enctype="multipart/form-data">
@@ -95,7 +95,7 @@
                 </x-modal>
 
                 <x-modal name="deleteG{{ $gallery->id }}" focusable>
-                    <!-- Modal Content -->
+             
                     <form method="post"
                         action="{{ route('aboutGalleryDelete.destroy', $gallery->id) }}"
                         class="p-6 bg-emerald-500">
@@ -128,7 +128,7 @@
             @endforeach
 
         </div>
-    </div>
+    </div>-->
     <hr>   
 
 

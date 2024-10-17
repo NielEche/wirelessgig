@@ -31,23 +31,23 @@
         </script>
     @endif
 
-    <div class="container-fluid lg:flex bg-emerald-500 h-screen justify-between py-36 px-12" >
-        <div class="text-black py-4 MenloRegular" style="min-width: 50vw;">
-            <h2 class="text-4xl py-2">Contact Us <span class="text-white">Today</span><span class="blink" style="color:white;">|</span></h2>
-            <p class="text-xl text-white py-2">31A Apara Road, G.R.A, Port Harcourt, <br>Rivers State.</p>
+    <div class="container-fluid lg:flex bg-black justify-between py-36 px-12" >
+        <div class="text-white py-4 MenloRegular text-left" style="min-width: 50vw;">
+            <h2 class="text-4xl py-2 upercase">Contact Us Today</h2>
             <br>
-            <a href="tel:+234 815 309 6184" class="text-xl text-white py-2">T: +234 815 309 6184</a> <br>
-            <a href="mailto:info@phtechexpo.com" class="text-xl text-white py-2">E: info@phtechexpo.com</a>
+            <a href="tel:+44 7587 118250" class="text-xl text-white py-2">T: +44 7587 118250</a> <br>
+            <a href="mailto:thewirelessgig@gmail.com" class="text-xl text-white py-2">E: thewirelessgig@gmail.com</a>
         </div>
 
-        <div class="text-black py-4">
+       <!-- <div class="text-black py-4">
             <div>
                 <button x-data="" x-on:click.prevent="$dispatch('open-modal', 'contactform')" id="add-feature-button"
                     class=" bg-white  MenloRegular text-black px-4 py-2 rounded">
                     Get in touch
                 </button>
             </div>
-        </div> 
+        </div> -->
+        
     </div>
 
 

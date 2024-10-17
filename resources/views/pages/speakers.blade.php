@@ -2,7 +2,7 @@
     <x-slot name="header">
         <div>
             <h2 class="font-semibold text-xl bg-emerald-500 dark:text-green-600 leading-tight MenloRegular ">
-                PH TECH EXPO
+              WIRELESS GIG
             </h2>
         </div>
     </x-slot>

@@ -1,8 +1,8 @@
 <x-app-layout>
     <x-slot name="header">
         <div>
-            <h2 class="font-semibold text-xl bg-emerald-500 dark:text-green-600 leading-tight MenloRegular ">
-                PH TECH EXPO
+            <h2 class="font-semibold text-xl bg-emerald-500 dark:text-green-600 leading-tight Montserrat ">
+               WIRELESS GIG
             </h2>
         </div>
     </x-slot>
@@ -13,12 +13,13 @@
     @endphp
 
 
-        <div class="container bg-white mx-auto px-6 lg:px-20 py-6 mt-20 rounded-lg">
+        <div class="container bg-black mx-auto px-6 lg:px-20 py-6 mt-20 rounded-lg">
+        
         @foreach($eventsmain as $main)
             <div class="py-12 lg:flex justify-between gap-6">
                 <div class="text-black py-4 lg:w-2/5">
-                    <h2 class="MenloRegular text-4xl font-black py-2">{{ $main->header }}<span class="blink" style="color:rgb(16 185 129 / var(--tw-bg-opacity));">|</span></h2>
-                    <p class="MenloRegular text-left phtech-para ">
+                    <h2 class="Montserrat text-4xl font-black py-2">{{ $main->header }}<span class="blink" style="color:rgb(16 185 129 / var(--tw-bg-opacity));">|</span></h2>
+                    <p class="Montserrat text-left phtech-para ">
                         {{ $main->caption }}
                     </p>
                 </div>
@@ -32,30 +33,21 @@
         </div>
 
         @if(!$events->isEmpty())
-            <div class="container mx-auto px-6 pt-32 pb-8">
-                <h2 class="MenloRegular text-4xl font-black py-2">Our Events<span class="blink" style="color:black;">|</span></h2>
+            <div class="container mx-auto px-6  pb-8">
+                <h2 class="Oswald text-white text-4xl font-black py-2"> Events</h2>
             </div>
         @endif
 
-        <div class="container bg-emerald-500 mx-auto px-6 pb-16 card-container lg:grid grid-cols-3 gap-4">
+        <div class="container bg-black mx-auto px-6 pb-16 card-container">
             @foreach($events as $event)
             <a href="{{ route('schedule.view', ['schedule' => $event->id]) }}">
-                <div class="card rounded-lg">
-                    <div class="card-front  rounded-lg flex justify-center items-center ">
-                            <div class="text-black text-left MenloRegular px-12 lg:px-12 py-4">
-                                <img class="w-80 py-4" src="public{{ $event->path }}" alt="">
-                                <p class="text-sm">{{ $event->date }}</p>
-                                <p class="text-sm">{{ $event->time }}</p>
+                    <div class=" rounded-lg lg:flex justify-center items-center "> 
+                            <img class="w-50 py-10" src="{{ $event->path }}" alt="">
+                            <div class="text-white text-left  px-12 lg:px-12 py-4">
+                                 <h2 class="Oswald text-2xl">{{ $event->theme }}</h2>
+                                <p class="text-sm text-left py-4 leading-6 Montserrat">{{ $event->about }}</p>
                             </div>
                     </div>
-                    <div class="card-back flex justify-center items-center rounded-lg ">
-                        <div class="text-white p-6 MenloRegular text-center">
-                            <!-- Back content goes here -->
-                            <h2 class="MenloRegular text-2xl">{{ $event->theme }}</h2>
-                            <p class="text-base">{{ $event->venue }}</p>
-                        </div>
-                    </div>
-                </div>
             </a> 
             @endforeach
         

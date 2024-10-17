@@ -52,7 +52,7 @@ class AdminHomeController extends Controller
     {
         $image_url = $request->file('path');
     
-        // Handle image upload to Cloudinary if a new image is provided
+        // Handle image upload 
         if ($request->hasFile('path') && $request->file('path')->isValid()) {
             $file = $request->file('path');
             // Define the storage path
@@ -62,8 +62,6 @@ class AdminHomeController extends Controller
                 // Get the URL to the file
                 $image_url = Storage::url($path);
             }
-
-        
         }
 
 
