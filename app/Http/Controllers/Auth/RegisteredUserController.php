@@ -41,18 +41,11 @@ class RegisteredUserController extends Controller
 
         $user = User::create([
             'name' => $request->name,
-            'role' => $request->role,
-            'booth' => $request->booth,
-            'job' => $request->job,
-            'industry' => $request->industry,
             'email' => $request->email,
             'address' => $request->address,
             'phone' => $request->phone,
             'gender' => $request->gender,
             'age' => $request->age,
-            'referral' => $request->referral,
-            'reasons_attending' => $request->reasons_attending,
-            'interest' => $request->interest,
             'password' => Hash::make($request->password),
         ]);
 
@@ -61,15 +54,7 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        // Determine if the user is an exhibitor
-        if ($request->input('role') === 'exhibitor') {
-            // Send email to exhibitor with booth details attached
-            Mail::to($request->input('email'))->send(new ExhibitorWelcomeEmail($user->booth));
-        } else {
-            // Send the default welcome email
-            Mail::to($request->input('email'))->send(new WelcomeEmail());
-        }
 
-        return redirect()->route('successReg')->with('success', 'Thank you for registering for Port Harcourt Tech Expo. We are thrilled to have you join us for this exciting event.');
+        return redirect()->route('successReg')->with('success', 'Thank you for registering to Wireless Gig. We are thrilled to have you join us.');
     }
 }

@@ -234,3 +234,37 @@ p{
 font-size: 12px;
 text-align: center;
 }
+
+
+.image-container {
+    position: relative;
+    display: inline-block;
+    }
+
+    .image-container::before,
+    .image-container::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    /* Customize the color of the curve */
+    }
+
+    .image-container::before {
+    top: 30px;
+    right: -10px;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-top: 2px solid green; 
+    border-right: 2px solid green; 
+    }
+
+    .image-container::after {
+    bottom: -15px;
+    left: -25px;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom: 2px solid #FF6C00; 
+    border-left: 2px solid #FF6C00; 
+    }

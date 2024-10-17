@@ -2,7 +2,8 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
     <div class="flex justify-center py-4">
-        <a href="/"> <img class="w-12" src="https://res.cloudinary.com/dx7x2tazo/image/upload/v1713590106/logophtech_faclfs_1_sn2ceq.png" alt=""></a>
+    <a href="/"> <img class="w-12"
+    src="https://res.cloudinary.com/nieleche/image/upload/v1724783944/logo_2_u8romc.png" style="width:80px !important;" alt=""></a>
     </div>
 
     <form method="POST" action="{{ route('login') }}">

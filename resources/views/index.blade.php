@@ -59,6 +59,15 @@
                             @if($gallery->header)
                             <h2 class="text-white Oswald font-semibold text-sm lg:text-base py-2">{{ $gallery->header }}</h2>
                             @endif
+                            @if($gallery->button)
+                                <div class="pt-6">
+                                    <a target="_blank" href=" {{ $gallery->embed}}" style="background-color:#006046;" class="px-4 py-2 rounded">
+                                    @if($gallery->button)
+                                    {{ $gallery->button }}
+                                    @endif
+                                    </a>
+                                </div>
+                            @endif
                         </div>
                     </div>
                     @endforeach
@@ -136,19 +145,19 @@
                     <div>
                           <h2 class=" Oswald font-black py-2 text-white text-4xl">LISTEN TO OUR EP</h2>
                         <div class="pt-10 pb-4">
-                            <a href="{{route('about')}}"  class="bg-white text-black font-black px-4 py-4">Here &rarr;</a>
+                            <a target="_blank" href="https://audiomack.com/the-wireless-gig/song"  class="bg-white text-black font-black px-4 py-4">Here &rarr;</a>
                         </div>
                     </div>
                 </div>
                 @foreach($homeAbouts as $about)
-                <div class="text-white py-4">
+                <div class="image-container pt-12">
                     <img style="border-radius:2rem;" src="https://res.cloudinary.com/nieleche/image/upload/v1724789940/Frame_1000004763_jqvare.png" alt="">
-                </div>    
+                    </div>
+
                 @endforeach  
             </div>
         </div>
 
-    
 
         <div class="container-fluid  bg-black mx-auto px-6 py-6 lg:px-20 lg:py-2">
             <div class="my-4 lg:flex justify-between py-6">

@@ -83,12 +83,12 @@
                             <x-input-error class="mt-2" :messages="$errors->get('header')" />
                         </div>
 
-                        <div class="mt-6 ">
+                        <!--<div class="mt-6 ">
                             <p for="caption" :value="__('Caption')">Caption</p>
                             <x-text-input id="caption" name="caption" type="text" class="mt-1 block w-full"
                                 :value="old('caption', $gallery->caption)" autofocus autocomplete="caption" />
                             <x-input-error class="mt-2" :messages="$errors->get('caption')" />
-                        </div>
+                        </div>-->
 
                         <div class="mt-6 ">
                             <p for="button" :value="__('button')">Button Text</p>
@@ -222,7 +222,7 @@
      <hr class="my-4 border-black dark:border-black">
 
 
-     <div class="container-fluid mx-auto pt-6  bg-SelectColor">
+     <!--<div class="container-fluid mx-auto pt-6  bg-SelectColor">
         <div class="text-left text-black bg-SelectColor lg:px-24 p-0 relative z-10">
             <h3 class="text-3xl leading-none pb-8 font-semibold orpheusproMedium">
                 Homepage Programs</h3>
@@ -240,7 +240,7 @@
                     <div class="w-full relative gallerSec">
                         <div
                             class="absolute galleryOverlay inset-0 bg-black opacity-40 transition-opacity duration-300">
-                        </div> <!-- Black overlay -->
+                        </div> 
                         <img alt="gallery image" class="block h-80 w-full object-cover object-center"
                             src="public{{ $program->path }}" />
                         <p>{{ $program->header }}</p>
@@ -256,7 +256,7 @@
                     </div>
                 </div>
                 <x-modal name="program{{ $program->id }}" focusable>
-                    <!-- Modal Content -->
+                   
                     <form method="post"
                         action="{{ route('programs.update', $program->id) }}"
                         class="p-6 bg-emerald-500" enctype="multipart/form-data">
@@ -308,7 +308,7 @@
                 </x-modal>
 
                 <x-modal name="deleteP{{ $program->id }}" focusable>
-                    <!-- Modal Content -->
+                 
                     <form method="post"
                         action="{{ route('programDelete.destroy', $program->id) }}"
                         class="p-6 bg-emerald-500">
@@ -346,7 +346,7 @@
                     <div class="w-full relative gallerSec">
                         <div
                             class="absolute galleryOverlay inset-0 bg-black opacity-40 transition-opacity duration-300">
-                        </div> <!-- Black overlay -->
+                        </div> 
                         <img alt="gallery image" class="block h-80 w-full object-cover object-center"
                             src="public{{ $eprogram->path }}" />
                         <p>{{ $eprogram->header }}</p>
@@ -360,7 +360,7 @@
                     </div>
                 </div>
                 <x-modal name="eprogram{{ $eprogram->id }}" focusable>
-                    <!-- Modal Content -->
+                   
                     <form method="post"
                         action="{{ route('eprograms.update', $eprogram->id) }}"
                         class="p-6 bg-emerald-500" enctype="multipart/form-data">
@@ -415,8 +415,6 @@
                     </form>
 
                 </x-modal>
-
-            
             @endforeach
 
         </div>
@@ -442,7 +440,7 @@
                     <div class="w-full relative gallerSec">
                         <div
                             class="absolute galleryOverlay inset-0 bg-black opacity-40 transition-opacity duration-300">
-                        </div> <!-- Black overlay -->
+                        </div> 
                         <img alt="gallery image" class="block h-80 w-full object-cover object-center"
                             src="public{{ $service->path }}" />
                         <p>{{ $service->title }}</p>
@@ -458,7 +456,6 @@
                     </div>
                 </div>
                 <x-modal name="service{{ $service->id }}" focusable>
-                    <!-- Modal Content -->
                     <form method="post"
                         action="{{ route('home_services.update', $service->id) }}"
                         class="p-6 bg-emerald-500" enctype="multipart/form-data">
@@ -510,7 +507,6 @@
                 </x-modal>
 
                 <x-modal name="deleteS{{ $service->id }}" focusable>
-                    <!-- Modal Content -->
                     <form method="post"
                         action="{{ route('homeServicesDelete.destroy', $service->id) }}"
                         class="p-6 bg-emerald-500">
@@ -544,7 +540,7 @@
 
         </div>
     </div>
-    <hr class="my-4 border-black dark:border-black">
+    <hr class="my-4 border-black dark:border-black">--> 
 
 
     <div class="container-fluid mx-auto pt-6  bg-SelectColor">
@@ -553,12 +549,12 @@
                 Homepage Videos</h3>
         </div>
         <hr class="  border-black dark:border-black">
-        <div class="flex items-center px-6 py-6">
+        <!--<div class="flex items-center px-6 py-6">
             <button x-data="" x-on:click.prevent="$dispatch('open-modal', 'addVideo')" id="add-service-button"
                 class="ml-auto text-xl py-4 underline  p-6  text-black">
                 Add Video
             </button>
-        </div>
+        </div>-->
         <div class=" flex flex-wrap">
             @foreach($HomeVideos as $video)
                 <div class="flex lg:w-1/3 w-1/2 flex-wrap">
@@ -687,12 +683,12 @@
                 <x-input-error class="mt-2" :messages="$errors->get('header')" />
             </div>
 
-            <div class="mt-6 ">
+           <!-- <div class="mt-6 ">
                 <p for="caption">Caption</p>
                 <x-text-input id="caption" name="caption" type="text" class="mt-1 block w-full"  autofocus
                     autocomplete="caption" />
                 <x-input-error class="mt-2" :messages="$errors->get('caption')" />
-            </div>
+            </div>-->
 
 
             <div class="mt-6 ">

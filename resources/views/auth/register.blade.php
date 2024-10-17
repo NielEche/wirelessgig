@@ -1,7 +1,7 @@
 <x-guest-layout>
     <div class="flex justify-center py-4">
         <a href="/"> <img class="w-12"
-                src="https://res.cloudinary.com/dx7x2tazo/image/upload/v1713590106/logophtech_faclfs_1_sn2ceq.png" alt=""></a>
+                src="https://res.cloudinary.com/nieleche/image/upload/v1724783944/logo_2_u8romc.png" style="width:80px !important;" alt=""></a>
     </div>
 
 
@@ -27,25 +27,7 @@
                 <x-input-error :messages="$errors->get('email')" class="mt-2" />
             </div>
 
-            <div class="mt-4">
-                <x-input-label for="role" :value="__('Registering as')" />
-                <x-input-error :messages="$errors->get('role')" class="mt-2" />
-                <select class="block mt-1 w-full rounded-lg text-white bg-black border-black focus:border-black focus:ring-black" id="role" name="role" required autofocus onchange="toggleBoothSizeSelect(); toggleAgeAndGender();">
-                    <option value="user">Attendee</option>
-                    <option value="exhibitor">Exhibitor</option>
-                </select>
-            </div>
-
-            <div id="boothSizeSelect" class="mt-4" style="display: none;">
-                <x-input-label for="booth_size" :value="__('Booth Category')" />
-                <x-input-error :messages="$errors->get('booth_size')" class="mt-2" />
-                <select class="block mt-1 w-full rounded-lg text-white bg-black border-black focus:border-black focus:ring-black" id="booth" name="booth">
-                    <option value="N1,000,000 ( 3m x 3m)">N1,000,000 ( 3m x 3m)</option>
-                    <option value="N500,000 (2m x 2m )">N500,000 (2m x 2m )</option>
-                    <option value="N250,000 (1m x1m)">N250,000 (1m x1m)</option>
-                    <option value="N50,000 (ONLINE EXHIBITION)">N50,000 (ONLINE EXHIBITION)</option>
-                </select>
-            </div>
+        
 
             <script>
                 function toggleBoothSizeSelect() {
@@ -88,89 +70,7 @@
             }
         </script>
 
-
-            <div class="mt-4">
-                <x-input-label for="job" :value="__('Job Title')" />
-                <x-text-input id="job" class="block mt-1 w-full" type="text" name="job" :value="old('job')" required
-                    autofocus autocomplete="job" />
-                <x-input-error :messages="$errors->get('job')" class="mt-2" />
-            </div>
-
-
-            <div class="mt-4">
-                <x-input-label for="industry"
-                    :value="__('Please indicate the primary industry your business operates in')" />
-            
-                <select class="block mt-1 w-full rounded-lg text-white bg-black border-black focus:border-black focus:ring-black" id="industry" required autofocus name="industry">
-                    <option value="" disabled selected>Select an industry</option>
-                    <optgroup label="Agriculture and Natural Resources">
-                        <option value="agriculture">Agriculture</option>
-                        <option value="forestry">Forestry</option>
-                        <option value="fishing">Fishing</option>
-                        <option value="mining">Mining</option>
-                    </optgroup>
-                    <optgroup label="Automotive and Transportation">
-                        <option value="automotive">Automotive</option>
-                        <option value="aerospace">Aerospace</option>
-                        <option value="logistics">Logistics</option>
-                        <option value="shipping">Shipping</option>
-                    </optgroup>
-                    <optgroup label="Construction and Engineering">
-                        <option value="construction">Construction</option>
-                        <option value="architecture">Architecture</option>
-                        <option value="engineering">Engineering</option>
-                        <option value="real_estate">Real Estate</option>
-                    </optgroup>
-                    <optgroup label="Education and Training">
-                        <option value="education">Education</option>
-                        <option value="training">Training</option>
-                        <option value="e_learning">E-learning</option>
-                    </optgroup>
-                    <optgroup label="Finance and Banking">
-                        <option value="banking">Banking</option>
-                        <option value="insurance">Insurance</option>
-                        <option value="investment">Investment</option>
-                        <option value="accounting">Accounting</option>
-                    </optgroup>
-                    <optgroup label="Healthcare and Pharmaceuticals">
-                        <option value="healthcare">Healthcare</option>
-                        <option value="pharmaceuticals">Pharmaceuticals</option>
-                        <option value="biotechnology">Biotechnology</option>
-                    </optgroup>
-                    <optgroup label="Hospitality and Tourism">
-                        <option value="hospitality">Hospitality</option>
-                        <option value="tourism">Tourism</option>
-                        <option value="restaurants">Restaurants</option>
-                        <option value="hotels">Hotels</option>
-                    </optgroup>
-                    <optgroup label="Information Technology">
-                        <option value="software">Software</option>
-                        <option value="hardware">Hardware</option>
-                        <option value="telecommunications">Telecommunications</option>
-                        <option value="internet">Internet</option>
-                    </optgroup>
-                    <optgroup label="Manufacturing and Production">
-                        <option value="manufacturing">Manufacturing</option>
-                        <option value="textiles">Textiles</option>
-                        <option value="electronics">Electronics</option>
-                        <option value="chemicals">Chemicals</option>
-                    </optgroup>
-                    <optgroup label="Media and Entertainment">
-                        <option value="media">Media</option>
-                        <option value="entertainment">Entertainment</option>
-                        <option value="advertising">Advertising</option>
-                        <option value="publishing">Publishing</option>
-                    </optgroup>
-                    <optgroup label="Retail and Consumer Goods">
-                        <option value="retail">Retail</option>
-                        <option value="wholesale">Wholesale</option>
-                        <option value="consumer_goods">Consumer Goods</option>
-                    </optgroup>
-                    <optgroup label="Other">
-                        <option value="other">Other</option>
-                    </optgroup>
-                </select>
-            </div>
+    
 
 
             <div class="mt-4">
@@ -211,48 +111,11 @@
                     <option value="60 and Above">60 and Above</option>
                 </select>
             </div>
-        </div>
 
-    
-        <div id="section2" style="display: none;">
-
-            <div class="mt-4">
-                <x-input-label for="referral" :value="__('How did you hear about Ph Tech Expo')" />
-                <x-input-error :messages="$errors->get('referral')" class="mt-2" />
-                <select class="block mt-1 w-full rounded-lg text-white bg-black border-black focus:border-black focus:ring-black" id="referral" name="referral" required autofocus >
-                    <option value="website">Website</option>    
-                    <option value="social_media">Social Media</option>
-                    <option value="press">Press</option>
-                    <option value="friend">From a friend</option>
-                    <option value="search_engine">Search Engine</option>
-                    <option value="event">Event</option>
-                    <option value="advertisement">Advertisement</option>
-                    <option value="email">Email</option>
-                </select>
-            </div>
-
-            <div class="mt-4 ">
-                <x-input-label for="reasons_attending" :value="__('What are your reasons to attend')" />
-                <textarea id="reasons_attending" name="reasons_attending"
-                    class="bg-black text-white border-b-2 border-black dark:border-black my-3 focus:border-black dark:focus:border-black focus:ring-black dark:focus:ring-black rounded-md shadow-sm mt-1 block w-full h-40 resize-y"
-                    required autofocus autocomplete="reasons_attending"></textarea>
-                <x-input-error class="mt-2" :messages="$errors->get('reasons_attending')" />
-            </div>
-
-            <div class="mt-4">
-                <x-input-label for="interest" :value="__('What topics, product sectors are you most interested in')" />
-                <textarea id="interest" name="interest"
-                    class="bg-black text-white border-b-2 border-black dark:border-black my-3 focus:border-black dark:focus:border-black focus:ring-black dark:focus:ring-black rounded-md shadow-sm mt-1 block w-full h-40 resize-y"
-                    required autofocus autocomplete="interest"></textarea>
-                <x-input-error class="mt-2" :messages="$errors->get('interest')" />
-            </div>
+               <!-- Password -->
 
 
-
-            <!-- Password -->
-
-
-            <div class="mt-4 relative">
+               <div class="mt-4 relative">
                 <x-input-label for="password" :value="__('Password')" />
                 <div class="flex items-center">
                     <x-text-input id="password" class="block pr-10 mt-1 w-full" type="password" name="password" required
@@ -305,10 +168,10 @@
 
             <div class="flex items-center justify-end mt-4">
            
-                <x-primary-button class="ms-4">
-                    {{ __('Register') }}
-                </x-primary-button>
-            </div>
+           <x-primary-button class="ms-4">
+               {{ __('Register') }}
+           </x-primary-button>
+       </div>
 
             <script>
                 const togglePassword = document.getElementById('togglePassword');
@@ -331,7 +194,9 @@
                 });
 
             </script>
+
         </div>
+
 
          <!-- Loader element -->
          <div id="loader" class="hidden animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-900"></div>
@@ -344,11 +209,7 @@
                 </a>
             </div>
 
-    <!-- Next and Prev Buttons -->
-    <div id="navigationButtons" style="padding-top:20px; font-weight:900;">
-        <button id="prevButton" style="display: none;">Prev</button>
-        <button id="nextButton">Next</button>
-    </div>
+
 
     <script>
         const section1 = document.getElementById('section1');

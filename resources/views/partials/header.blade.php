@@ -140,7 +140,7 @@
             </div>
 
             <div class="py-6 space-y-4">
-                <a href="/"  class="text-2xl font-bold MenloRegular">
+                <a href="{{ route('gallery') }}"  class="text-2xl font-bold MenloRegular">
                     Gallery
                 </a>
             </div>

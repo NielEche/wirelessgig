@@ -40,7 +40,7 @@
 
                  
                     <div class="text-black py-4">
-                        <p class="MenloRegular text-sm text-left">Manage your account and events here, update your availabilty and keep track of all your sessions.</p class="MenloRegular">
+                        <p class="MenloRegular text-sm text-left">Manage your account here, update your availabilty and keep track of all your sessions.</p class="MenloRegular">
                         
                     </div>      
             </div>

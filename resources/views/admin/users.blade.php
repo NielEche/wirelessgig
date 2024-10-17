@@ -44,9 +44,6 @@
                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Phone No</th>
                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Gender</th>
                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Age Range</th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Role</th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">How did you hear</th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Confirm Attendance</th>
                     <!-- Add more columns as needed -->
                 </tr>
             </thead>
@@ -61,15 +58,7 @@
                     <td class="px-6 py-4 whitespace-nowrap text-gray-900">{{ $user->phone }}</td>
                     <td class="px-6 py-4 whitespace-nowrap text-gray-900">{{ $user->gender }}</td>
                     <td class="px-6 py-4 whitespace-nowrap text-gray-900">{{ $user->age }}</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-gray-900">
-                        @if($user->role === 'user')
-                            attendee
-                        @else
-                            {{ $user->role }}
-                        @endif
-                    </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-gray-900">{{ $user->referral }}</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-gray-900">{{ $user->attending }}</td>
+               
                     <!-- Add more columns as needed -->
                 </tr>
                 @endforeach
